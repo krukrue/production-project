@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from "react";
-import { THEME_LOCAL_STORAGE_KEY, Theme, ThemeContext } from "./theme-context";
+import { THEME_LOCAL_STORAGE_KEY, Theme, ThemeContext } from "app/providers/theme-provider/lib/theme-context";
 
 const defaultTheme = localStorage.getItem(THEME_LOCAL_STORAGE_KEY) as Theme ?? Theme.Light
 
