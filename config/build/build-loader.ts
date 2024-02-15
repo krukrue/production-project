@@ -1,22 +1,22 @@
-import webpack from 'webpack';
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { BuildOptions } from "./types/config";
+import type webpack from 'webpack'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { type BuildOptions } from './types/config'
 
-export function buildLoaders(options: BuildOptions) : webpack.RuleSetRule[] {
+export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
   return [
     {
       test: /\.(js|tsx|ts|jsx)$/,
       exclude: /node_modules/,
       use: {
-        loader: "babel-loader",
+        loader: 'babel-loader',
         options: {
           presets: ['@babel/preset-env'],
-          "plugins": [
+          plugins: [
             [
-              "i18next-extract",
+              'i18next-extract',
               {
-                locales: ["en", "ru"],
-                keyAsDefaultValue: true,
+                locales: ['en', 'ru'],
+                keyAsDefaultValue: true
               }
             ]
           ]
@@ -31,32 +31,30 @@ export function buildLoaders(options: BuildOptions) : webpack.RuleSetRule[] {
     {
       test: /\.s[ac]ss$/i,
       use: [
-        options.isDev ? MiniCssExtractPlugin.loader : "style-loader",
+        options.isDev ? MiniCssExtractPlugin.loader : 'style-loader',
         {
-          loader: "css-loader",
+          loader: 'css-loader',
           options: {
             modules: {
               auto: (resourcePath: string) => {
-                return resourcePath.endsWith('.module.scss');
+                return resourcePath.endsWith('.module.scss')
               },
-              localIdentName: options.isDev ? '[path][name]__[local]--[hash:base64:8]' : '[hash:base64:8]',
+              localIdentName: options.isDev ? '[path][name]__[local]--[hash:base64:8]' : '[hash:base64:8]'
             }
-          },
-        },
-        ,
-      ],
+          }
+        }
+      ]
     },
     {
       test: /\.(png|jpe?g|gif|woff2)$/i,
       use: {
-        loader: 'file-loader',
+        loader: 'file-loader'
       }
     },
     {
       test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    },
-
+      use: ['@svgr/webpack']
+    }
 
   ]
 }

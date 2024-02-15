@@ -1,3 +1,3 @@
-import React from "react";
+import React from 'react'
 
-export const AppRouter = React.lazy(() => import('./ui/app-router'));
+export const AppRouter = React.lazy(async () => await import('./ui/app-router'))

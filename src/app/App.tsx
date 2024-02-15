@@ -1,18 +1,16 @@
-import "./styles/index.scss";
-import React from "react";
-import { classNames } from "../shared/lib/classnames/class-names";
-import { useTheme } from "./providers/theme-provider";
-import { AppRouter } from "./providers/router";
-import { Navbar } from "widgets/navbar";
-import { useTranslation } from "react-i18next";
-import { Button } from "shared/ui/button/button";
-import { SideBar } from "widgets/sidebar";
+import './styles/index.scss'
+import React from 'react'
+import { classNames } from '../shared/lib/classnames/class-names'
+import { useTheme } from './providers/theme-provider'
+import { AppRouter } from './providers/router'
+import { Navbar } from 'widgets/navbar'
+import { SideBar } from 'widgets/sidebar'
 
 const App = () => {
-  const { theme } = useTheme();
+  const { theme } = useTheme()
 
   return (
-    <div className={classNames(`app`, undefined, [theme])}>
+    <div className={classNames('app', undefined, [theme])}>
       <React.Suspense fallback={<div>Loading...</div>}>
         <Navbar />
         <div className="content-page">
@@ -25,7 +23,7 @@ const App = () => {
         </div>
       </React.Suspense>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

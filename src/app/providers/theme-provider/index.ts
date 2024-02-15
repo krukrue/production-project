@@ -1,7 +1,4 @@
-import { ThemeProvider } from "./ui/theme-provider";
-import { useTheme } from "./lib/use-theme";
-import { Theme, THEME_LOCAL_STORAGE_KEY } from "./lib/theme-context";
+import { ThemeProvider } from './ui/theme-provider'
+import { useTheme } from './lib/use-theme'
 
-export { ThemeProvider, useTheme };
-
- 
+export { ThemeProvider, useTheme }
