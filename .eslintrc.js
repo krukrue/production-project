@@ -25,7 +25,8 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "i18next"
     ],
     "rules": {
         "react/jsx-indent": [2, 2],
@@ -39,5 +40,6 @@ module.exports = {
         "react/jsx-props-no-spreading": "warn",
         "@typescript-eslint/array-type": "off",
         "@typescript-eslint/no-floating-promises": "off",
+        "i18next/no-literal-string": ["error", { markupOnly: true }]
     }
 }
