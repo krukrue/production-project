@@ -1,4 +1,7 @@
 {
+  "aboutSite": "aboutSite",
   "mainPage": "mainPage",
+  "notFound": "notFound",
+  "notFoundPage": "notFoundPage",
   "translate": "translate"
 }
