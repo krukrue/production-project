@@ -4,6 +4,7 @@
  */
 
 import type { Config } from 'jest'
+import path from 'path'
 
 const config: Config = {
   // All imported modules in your tests should be mocked automatically
@@ -21,9 +22,21 @@ const config: Config = {
     '\\\\node_modules\\\\'
   ],
   testEnvironment: 'jsdom',
+  moduleNameMapper: {
+    '\\.s?css$': 'identity-obj-proxy',
+    '\\.svg$': path.resolve(__dirname, 'jest-empty-component.tsx')
+  },
+  globals: {
+    IS_DEV: true
+  },
   moduleDirectories: [
-    'node_modules'
+    'node_modules',
+    'src'
   ],
+  modulePaths: [
+    '<rootDir>src'
+  ],
+  setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.ts'],
   moduleFileExtensions: [
     'js',
     'mjs',

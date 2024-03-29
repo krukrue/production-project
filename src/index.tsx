@@ -4,6 +4,7 @@ import { ThemeProvider } from 'app/providers/theme-provider'
 import App from 'app/App'
 
 import 'shared/config/i18n/i18n'
+import { ErrorBoundary } from 'app/providers/error-bounder'
 
 const elem = document.getElementById('root')
 
@@ -11,8 +12,10 @@ const root = createRoot(elem as Element)
 
 root.render(
   <BrowserRouter>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </ErrorBoundary>
   </BrowserRouter>
 )

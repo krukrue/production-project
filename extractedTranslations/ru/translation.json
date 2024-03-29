@@ -1,7 +1,9 @@
 {
   "aboutSite": "aboutSite",
+  "error": "error",
   "mainPage": "mainPage",
   "notFound": "notFound",
   "notFoundPage": "notFoundPage",
+  "reload": "reload",
   "translate": "translate"
 }

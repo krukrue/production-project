@@ -37,9 +37,10 @@ module.exports = {
         "react/react-in-jsx-scope": "off",
         "typescript.format.insertSpaceBeforeFunctionParenthesis": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
-        "react/jsx-props-no-spreading": "warn",
+        // "react/jsx-props-no-spreading": "off",
         "@typescript-eslint/array-type": "off",
         "@typescript-eslint/no-floating-promises": "off",
-        "i18next/no-literal-string": ["error", { markupOnly: true }]
+        "i18next/no-literal-string": ["error", { markupOnly: true }],
+
     }
 }

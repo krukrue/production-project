@@ -10,11 +10,12 @@ interface LangSwitcherProps {
 
 export const LangSwitcher: React.FC<LangSwitcherProps> = ({ className }) => {
   const { t } = useTranslation('translation')
-  const switchLang = () => {
+  const switchLang = async () => {
     i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en')
   }
 
   return (
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     <Button theme={Theme.Clear} onClick={switchLang}>{t('translate')} {i18n.language === 'en' ? 'ru' : 'en'}</Button>
 
   )

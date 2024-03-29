@@ -4,7 +4,9 @@ import { classNames } from 'shared/lib/classnames/class-names'
 
 interface LoaderProps {
   className?: string
+  checkedIds?: CheckedIdsChangeFunc
 }
+export type CheckedIdsChangeFunc = (ids?: Set<number>) => void
 
 export const Loader: React.FC<LoaderProps> = ({ className }) => {
   return (

@@ -1,5 +1,5 @@
 import { describe, test, expect } from '@jest/globals'
-import { classNames } from './class-names'
+import { classNames } from 'shared/lib/classnames/class-names'
 
 describe('classNames testing', () => {
   test('widthOnlyFirstParam', () => {
